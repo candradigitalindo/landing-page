@@ -2,6 +2,8 @@
 function radius_net_setup() {
     add_theme_support('post-thumbnails');
     add_theme_support('html5', ['search-form','comment-form','comment-list','gallery','caption']);
+    add_image_size('blog-card', 760, 428, true);   // 16:9 @2x untuk card grid
+    add_image_size('blog-hero', 1200, 630, true);  // OG-style untuk single post
 }
 add_action('after_setup_theme', 'radius_net_setup');
 
@@ -43,6 +45,15 @@ function dradius_cat_class($slug) {
         'tips-trik'  => 'blog-cat--tips',
     ];
     return $map[$slug] ?? 'blog-cat--tutorial';
+}
+
+function dradius_cat_icon($slug) {
+    $icons = [
+        'tutorial'   => '<svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+        'bisnis-isp' => '<svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+        'tips-trik'  => '<svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><path d="M12 6a6 6 0 0 1 0 12"/><path d="M12 18v4"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/><path d="M9 21h6"/></svg>',
+    ];
+    return $icons[$slug] ?? $icons['tutorial'];
 }
 
 // Buat kategori + halaman Blog + sample posts saat pertama kali tema diload

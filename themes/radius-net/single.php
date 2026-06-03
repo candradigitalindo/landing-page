@@ -39,6 +39,18 @@
         </div>
       </div>
 
+      <!-- Featured image -->
+      <?php if (has_post_thumbnail()): ?>
+      <figure class="single-post-hero" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <?php echo get_the_post_thumbnail(null, 'blog-hero', [
+            'alt'      => esc_attr(get_the_title()),
+            'loading'  => 'eager',
+            'fetchpriority' => 'high',
+            'itemprop' => 'url',
+        ]); ?>
+      </figure>
+      <?php endif; ?>
+
       <!-- Content -->
       <div class="single-post-content">
         <?php the_content(); ?>

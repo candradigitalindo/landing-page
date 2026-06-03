@@ -42,32 +42,9 @@
 
     <div class="blog-grid blog-grid--wide">
       <?php $i = 0; while ($blog_q->have_posts()): $blog_q->the_post();
-        $cats      = get_the_category();
-        $cat       = $cats[0] ?? null;
-        $cat_class = $cat ? dradius_cat_class($cat->slug) : 'blog-cat--tutorial';
-        $cat_name  = $cat ? esc_html($cat->name) : 'Artikel';
-        $d_attr    = $i > 0 ? ' style="--delay:' . min($i * 0.05, 0.3) . 's"' : '';
+        get_template_part('template-parts/blog-card', null, ['idx' => $i, 'heading' => 'h2']);
         $i++;
-      ?>
-      <article class="blog-card fade-up"<?php echo $d_attr; ?>>
-        <div class="blog-card-top">
-          <span class="blog-cat <?php echo esc_attr($cat_class); ?>"><?php echo $cat_name; ?></span>
-          <span class="blog-read-time"><?php echo esc_html(dradius_read_time()); ?></span>
-        </div>
-        <h2 class="blog-card-title"><?php the_title(); ?></h2>
-        <p class="blog-card-excerpt"><?php echo esc_html(wp_trim_words(get_the_excerpt() ?: strip_tags(get_the_content()), 22, '...')); ?></p>
-        <div class="blog-card-footer">
-          <div class="blog-card-meta">
-            <div class="blog-avatar"><?php echo esc_html(mb_strtoupper(mb_substr(get_the_author(), 0, 1))); ?></div>
-            <div>
-              <div class="blog-author"><?php the_author(); ?></div>
-              <div class="blog-date"><?php echo get_the_date('j M Y'); ?></div>
-            </div>
-          </div>
-          <a href="<?php the_permalink(); ?>" class="blog-card-link">Baca →</a>
-        </div>
-      </article>
-      <?php endwhile; ?>
+      endwhile; ?>
     </div>
 
     <!-- Pagination -->
