@@ -325,14 +325,11 @@ async function loadPlans(obs) {
 }
 
 // ── WhatsApp Welcome Widget ───────────────────────────────
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   const WA_NUMBER  = '6285121398354';
   const WA_MESSAGE = 'Halo, saya tertarik dengan D Radius! Boleh saya tahu lebih lanjut?';
   const DELAY_MS   = 5000;
-  const STORE_KEY  = 'wa_widget_dismissed';
-
-  // Jangan tampilkan lagi dalam sesi yang sama jika sudah di-dismiss
-  if (sessionStorage.getItem(STORE_KEY)) return;
+  const BUBBLE_KEY = 'wa_bubble_dismissed'; // hanya kontrol bubble, bukan FAB
 
   const waURL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MESSAGE);
 
@@ -357,25 +354,28 @@ async function loadPlans(obs) {
   const bubble = document.getElementById('wa-bubble');
   const fab    = document.getElementById('wa-fab');
   const close  = document.getElementById('wa-close');
+  const bubbleDismissed = sessionStorage.getItem(BUBBLE_KEY);
 
-  // Tampilkan FAB setelah 5 detik
+  // FAB selalu muncul setelah 5 detik
   setTimeout(function () {
     widget.classList.add('visible');
     fab.classList.add('show');
-    // Tampilkan bubble 0.6s setelah FAB muncul
-    setTimeout(function () { bubble.classList.add('show'); }, 600);
+    // Bubble hanya muncul jika belum pernah di-dismiss di sesi ini
+    if (!bubbleDismissed) {
+      setTimeout(function () { bubble.classList.add('show'); }, 600);
+    }
   }, DELAY_MS);
 
-  // Dismiss bubble (bukan FAB) saat tombol X diklik
+  // Dismiss hanya bubble saat tombol X diklik — FAB tetap ada
   close.addEventListener('click', function (e) {
     e.preventDefault();
     bubble.classList.remove('show');
-    sessionStorage.setItem(STORE_KEY, '1');
+    sessionStorage.setItem(BUBBLE_KEY, '1');
   });
 
-  // Dismiss bubble saat FAB diklik (tetap buka WA)
+  // Dismiss bubble saat FAB diklik, FAB tetap tampil
   fab.addEventListener('click', function () {
     bubble.classList.remove('show');
-    sessionStorage.setItem(STORE_KEY, '1');
+    sessionStorage.setItem(BUBBLE_KEY, '1');
   });
-}());
+});

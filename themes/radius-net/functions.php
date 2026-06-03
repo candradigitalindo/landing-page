@@ -9,8 +9,8 @@ add_action('after_setup_theme', 'radius_net_setup');
 
 function radius_net_scripts() {
     // Google Fonts dimuat async di header.php agar tidak render-blocking
-    wp_enqueue_style('radius-net-main', get_template_directory_uri() . '/assets/main.css', [], '2.6.0');
-    wp_enqueue_script('radius-net-main', get_template_directory_uri() . '/assets/main.js', [], '2.6.0', true);
+    wp_enqueue_style('radius-net-main', get_template_directory_uri() . '/assets/main.css', [], '2.6.1');
+    wp_enqueue_script('radius-net-main', get_template_directory_uri() . '/assets/main.js', [], '2.6.1', true);
 }
 add_action('wp_enqueue_scripts', 'radius_net_scripts');
 

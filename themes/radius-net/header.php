@@ -182,7 +182,7 @@ if ( is_page('tentang-kami') ) {
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
 
   <!-- Preload CSS kritis agar browser fetch lebih awal -->
-  <link rel="preload" as="style" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/main.css?v=2.6.0">
+  <link rel="preload" as="style" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/main.css?v=2.6.1">
 
   <!-- Preload LCP image (poster video hero) -->
   <link rel="preload" as="image" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/hero-fallback.jpg" fetchpriority="high">
