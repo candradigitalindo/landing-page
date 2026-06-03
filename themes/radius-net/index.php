@@ -708,6 +708,88 @@
 <div class="section-divider"></div>
 
 <!-- ================================================================
+  BLOG SECTION
+================================================================ -->
+<section class="blog-section section" id="blog">
+  <div class="container">
+
+    <div class="text-center fade-up">
+      <span class="badge"><span class="dot"></span> Blog & Artikel</span>
+      <h2 class="section-title">Wawasan untuk<br><span class="text-gradient">Operator ISP Indonesia</span></h2>
+      <p class="section-subtitle">Tips, tutorial, dan cerita nyata dari komunitas ISP lokal Indonesia.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <article class="blog-card fade-up">
+        <div class="blog-card-top">
+          <span class="blog-cat blog-cat--tutorial">Tutorial</span>
+          <span class="blog-read-time">5 menit baca</span>
+        </div>
+        <h3 class="blog-card-title">Cara Setting MikroTik PPPoE untuk ISP Pemula</h3>
+        <p class="blog-card-excerpt">Panduan lengkap konfigurasi MikroTik PPPoE dari nol. Cocok untuk ISP RT/RW Net yang baru memulai dan ingin langsung konek ke RADIUS server.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <div class="blog-avatar">T</div>
+            <div>
+              <div class="blog-author">Tim D Radius</div>
+              <div class="blog-date">28 Mei 2026</div>
+            </div>
+          </div>
+          <a href="#" class="blog-card-link">Baca →</a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up" style="--delay:0.1s">
+        <div class="blog-card-top">
+          <span class="blog-cat blog-cat--bisnis">Bisnis ISP</span>
+          <span class="blog-read-time">7 menit baca</span>
+        </div>
+        <h3 class="blog-card-title">Billing Otomatis: Hemat 10 Jam Kerja per Bulan</h3>
+        <p class="blog-card-excerpt">Cerita nyata dari operator ISP di Surabaya yang berhasil menghilangkan tagihan manual dan meningkatkan pembayaran tepat waktu hingga 40%.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <div class="blog-avatar">T</div>
+            <div>
+              <div class="blog-author">Tim D Radius</div>
+              <div class="blog-date">15 Mei 2026</div>
+            </div>
+          </div>
+          <a href="#" class="blog-card-link">Baca →</a>
+        </div>
+      </article>
+
+      <article class="blog-card fade-up" style="--delay:0.2s">
+        <div class="blog-card-top">
+          <span class="blog-cat blog-cat--tips">Tips & Trik</span>
+          <span class="blog-read-time">4 menit baca</span>
+        </div>
+        <h3 class="blog-card-title">5 Kesalahan ISP Lokal yang Bikin Pelanggan Kabur</h3>
+        <p class="blog-card-excerpt">Dari respons support yang lambat sampai billing tidak transparan — ini kesalahan paling umum operator ISP lokal dan cara menghindarinya sekarang.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <div class="blog-avatar">T</div>
+            <div>
+              <div class="blog-author">Tim D Radius</div>
+              <div class="blog-date">2 Mei 2026</div>
+            </div>
+          </div>
+          <a href="#" class="blog-card-link">Baca →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center fade-up" style="--delay:0.25s;margin-top:40px">
+      <a href="#" class="btn btn-outline">Lihat Semua Artikel →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
   FAQ SECTION
 ================================================================ -->
 <section class="faq-section section" id="faq">
