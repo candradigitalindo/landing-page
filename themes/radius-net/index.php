@@ -719,69 +719,48 @@
       <p class="section-subtitle">Tips, tutorial, dan cerita nyata dari komunitas ISP lokal Indonesia.</p>
     </div>
 
+    <?php
+    $blog_q = new WP_Query([
+        'post_type'      => 'post',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ]);
+    if ($blog_q->have_posts()): ?>
     <div class="blog-grid">
-
-      <article class="blog-card fade-up">
+      <?php $i = 0; while ($blog_q->have_posts()): $blog_q->the_post();
+        $cats      = get_the_category();
+        $cat       = $cats[0] ?? null;
+        $cat_class = $cat ? dradius_cat_class($cat->slug) : 'blog-cat--tutorial';
+        $cat_name  = $cat ? esc_html($cat->name) : 'Artikel';
+        $d_attr    = $i > 0 ? ' style="--delay:' . ($i * 0.1) . 's"' : '';
+        $i++;
+      ?>
+      <article class="blog-card fade-up"<?php echo $d_attr; ?>>
         <div class="blog-card-top">
-          <span class="blog-cat blog-cat--tutorial">Tutorial</span>
-          <span class="blog-read-time">5 menit baca</span>
+          <span class="blog-cat <?php echo esc_attr($cat_class); ?>"><?php echo $cat_name; ?></span>
+          <span class="blog-read-time"><?php echo esc_html(dradius_read_time()); ?></span>
         </div>
-        <h3 class="blog-card-title">Cara Setting MikroTik PPPoE untuk ISP Pemula</h3>
-        <p class="blog-card-excerpt">Panduan lengkap konfigurasi MikroTik PPPoE dari nol. Cocok untuk ISP RT/RW Net yang baru memulai dan ingin langsung konek ke RADIUS server.</p>
+        <h3 class="blog-card-title"><?php the_title(); ?></h3>
+        <p class="blog-card-excerpt"><?php echo esc_html(wp_trim_words(get_the_excerpt() ?: strip_tags(get_the_content()), 20, '...')); ?></p>
         <div class="blog-card-footer">
           <div class="blog-card-meta">
-            <div class="blog-avatar">T</div>
+            <div class="blog-avatar"><?php echo esc_html(mb_strtoupper(mb_substr(get_the_author(), 0, 1))); ?></div>
             <div>
-              <div class="blog-author">Tim D Radius</div>
-              <div class="blog-date">28 Mei 2026</div>
+              <div class="blog-author"><?php the_author(); ?></div>
+              <div class="blog-date"><?php echo get_the_date('j M Y'); ?></div>
             </div>
           </div>
-          <a href="#" class="blog-card-link">Baca →</a>
+          <a href="<?php the_permalink(); ?>" class="blog-card-link">Baca →</a>
         </div>
       </article>
-
-      <article class="blog-card fade-up" style="--delay:0.1s">
-        <div class="blog-card-top">
-          <span class="blog-cat blog-cat--bisnis">Bisnis ISP</span>
-          <span class="blog-read-time">7 menit baca</span>
-        </div>
-        <h3 class="blog-card-title">Billing Otomatis: Hemat 10 Jam Kerja per Bulan</h3>
-        <p class="blog-card-excerpt">Cerita nyata dari operator ISP di Surabaya yang berhasil menghilangkan tagihan manual dan meningkatkan pembayaran tepat waktu hingga 40%.</p>
-        <div class="blog-card-footer">
-          <div class="blog-card-meta">
-            <div class="blog-avatar">T</div>
-            <div>
-              <div class="blog-author">Tim D Radius</div>
-              <div class="blog-date">15 Mei 2026</div>
-            </div>
-          </div>
-          <a href="#" class="blog-card-link">Baca →</a>
-        </div>
-      </article>
-
-      <article class="blog-card fade-up" style="--delay:0.2s">
-        <div class="blog-card-top">
-          <span class="blog-cat blog-cat--tips">Tips & Trik</span>
-          <span class="blog-read-time">4 menit baca</span>
-        </div>
-        <h3 class="blog-card-title">5 Kesalahan ISP Lokal yang Bikin Pelanggan Kabur</h3>
-        <p class="blog-card-excerpt">Dari respons support yang lambat sampai billing tidak transparan — ini kesalahan paling umum operator ISP lokal dan cara menghindarinya sekarang.</p>
-        <div class="blog-card-footer">
-          <div class="blog-card-meta">
-            <div class="blog-avatar">T</div>
-            <div>
-              <div class="blog-author">Tim D Radius</div>
-              <div class="blog-date">2 Mei 2026</div>
-            </div>
-          </div>
-          <a href="#" class="blog-card-link">Baca →</a>
-        </div>
-      </article>
-
+      <?php endwhile; wp_reset_postdata(); ?>
     </div>
+    <?php endif; ?>
 
-    <div class="text-center fade-up" style="--delay:0.25s;margin-top:40px">
-      <a href="#" class="btn btn-outline">Lihat Semua Artikel →</a>
+    <div class="text-center fade-up" style="--delay:0.3s;margin-top:40px">
+      <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn btn-outline">Lihat Semua Artikel →</a>
     </div>
 
   </div>

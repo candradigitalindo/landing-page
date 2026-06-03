@@ -70,6 +70,7 @@
       <!-- Bantuan -->
       <div class="footer-col">
         <h4>Bantuan</h4>
+        <a href="<?php echo esc_url(home_url('/blog/')); ?>">Blog & Artikel</a>
         <a href="#faq">FAQ</a>
         <a href="<?php echo esc_url(home_url('/kontak/')); ?>">Kontak &amp; Support</a>
         <a href="<?php echo esc_url(home_url('/tentang-kami/')); ?>">Tentang Kami</a>
