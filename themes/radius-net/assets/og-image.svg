@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#060a20"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <!-- Glow -->
+  <ellipse cx="600" cy="315" rx="500" ry="280" fill="rgba(0,229,255,0.04)"/>
+  <!-- Logo icon -->
+  <circle cx="200" cy="315" r="70" stroke="#00e5ff" stroke-width="2" fill="rgba(0,229,255,0.06)"/>
+  <line x1="200" y1="262" x2="200" y2="368" stroke="#00e5ff" stroke-width="2.5"/>
+  <line x1="200" y1="278" x2="174" y2="296" stroke="#00e5ff" stroke-width="1.5"/>
+  <line x1="200" y1="278" x2="226" y2="296" stroke="#00e5ff" stroke-width="1.5"/>
+  <circle cx="200" cy="259" r="5" fill="#00e5ff"/>
+  <circle cx="200" cy="259" r="12" stroke="rgba(0,229,255,0.4)" fill="none" stroke-width="1.5"/>
+  <circle cx="200" cy="259" r="20" stroke="rgba(0,229,255,0.2)" fill="none" stroke-width="1.5"/>
+  <path d="M148 352 Q200 332 252 352" stroke="rgba(124,77,255,0.6)" stroke-width="1.5" fill="none"/>
+  <path d="M130 366 Q200 340 270 366" stroke="rgba(124,77,255,0.3)" stroke-width="1.5" fill="none"/>
+  <!-- Brand name -->
+  <text x="310" y="285" font-family="Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="2" fill="white">D RADIUS</text>
+  <text x="313" y="340" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="rgba(255,255,255,0.55)" letter-spacing="1">Platform Manajemen ISP Modern Indonesia</text>
+  <!-- Divider -->
+  <line x1="310" y1="370" x2="760" y2="370" stroke="rgba(0,229,255,0.3)" stroke-width="1"/>
+  <!-- Tagline chips -->
+  <rect x="310" y="390" width="150" height="36" rx="18" fill="rgba(0,229,255,0.1)" stroke="rgba(0,229,255,0.3)" stroke-width="1"/>
+  <text x="385" y="413" font-family="Arial, sans-serif" font-size="14" fill="#00e5ff" text-anchor="middle">RADIUS Server</text>
+  <rect x="472" y="390" width="170" height="36" rx="18" fill="rgba(124,77,255,0.1)" stroke="rgba(124,77,255,0.3)" stroke-width="1"/>
+  <text x="557" y="413" font-family="Arial, sans-serif" font-size="14" fill="#b39dff" text-anchor="middle">Billing Otomatis</text>
+  <rect x="654" y="390" width="180" height="36" rx="18" fill="rgba(0,229,255,0.1)" stroke="rgba(0,229,255,0.3)" stroke-width="1"/>
+  <text x="744" y="413" font-family="Arial, sans-serif" font-size="14" fill="#00e5ff" text-anchor="middle">WhatsApp Gateway</text>
+  <!-- URL -->
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.3)" text-anchor="middle">radiusnet.id</text>
+</svg>

@@ -1,0 +1,72 @@
+services:
+  landing_db:
+    image: mysql:8.0
+    container_name: landing_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: landing_root_2024
+      MYSQL_DATABASE: landing_wp
+      MYSQL_USER: landing_user
+      MYSQL_PASSWORD: landing_pass_2024
+    volumes:
+      - landing_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "landing_user", "-planding_pass_2024"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  landing_wp:
+    image: wordpress:6.5-php8.3-fpm-alpine
+    container_name: landing_wp
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: landing_db:3306
+      WORDPRESS_DB_NAME: landing_wp
+      WORDPRESS_DB_USER: landing_user
+      WORDPRESS_DB_PASSWORD: landing_pass_2024
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - landing_wp_data:/var/www/html
+      - ./themes/radius-net:/var/www/html/wp-content/themes/radius-net
+    depends_on:
+      landing_db:
+        condition: service_healthy
+
+  landing_nginx:
+    image: nginx:alpine
+    container_name: landing_nginx
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - landing_wp_data:/var/www/html:ro
+      - ./themes/radius-net:/var/www/html/wp-content/themes/radius-net:ro
+    depends_on:
+      - landing_wp
+
+  landing_wpcli:
+    image: wordpress:cli-php8.3
+    container_name: landing_wpcli
+    restart: "no"
+    environment:
+      WORDPRESS_DB_HOST: landing_db:3306
+      WORDPRESS_DB_NAME: landing_wp
+      WORDPRESS_DB_USER: landing_user
+      WORDPRESS_DB_PASSWORD: landing_pass_2024
+    volumes:
+      - landing_wp_data:/var/www/html
+      - ./themes/radius-net:/var/www/html/wp-content/themes/radius-net
+      - ./scripts/setup.sh:/setup.sh:ro
+    depends_on:
+      landing_db:
+        condition: service_healthy
+      landing_wp:
+        condition: service_started
+    user: "33:33"
+    entrypoint: ["/bin/sh", "/setup.sh"]
+
+volumes:
+  landing_mysql:
+  landing_wp_data:

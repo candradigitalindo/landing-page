@@ -1,0 +1,11 @@
+# WordPress data (volume Docker, tidak perlu di-commit)
+wordpress-data/
+mysql-data/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
