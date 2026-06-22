@@ -22,7 +22,7 @@ if ( is_page('tentang-kami') ) {
     'description' => 'Hubungi tim D Radius lewat WhatsApp, email, atau tiket support. Jam layanan Senin–Jumat 08.00–17.00 WIB. Siap bantu masalah teknis dan billing ISP Anda.',
     'canonical'   => home_url('/kontak/'),
     'og_title'    => 'Hubungi Tim D Radius — Support ISP Siap Membantu',
-    'og_desc'     => 'Ada pertanyaan teknis atau billing? Hubungi tim D Radius lewat WhatsApp +62 851-2139-8354 atau email support@dradius.online.',
+    'og_desc'     => 'Ada pertanyaan teknis atau billing? Hubungi tim D Radius lewat WhatsApp +62 851-2139-8354 atau email support@dradius.net.',
   ];
 }
 ?>
@@ -110,9 +110,9 @@ if ( is_page('tentang-kami') ) {
     "url": "<?php echo esc_url(home_url('/')); ?>",
     "logo": "<?php echo esc_url(get_template_directory_uri()); ?>/assets/favicon.svg",
     "image": "<?php echo esc_url(get_template_directory_uri()); ?>/assets/og-image.png",
-    "description": "Platform manajemen ISP terpadu untuk RT/RW Net dan Internet Provider Indonesia. Billing otomatis, RADIUS server, WhatsApp gateway, dan manajemen MikroTik dalam satu platform.",
+    "description": "Platform manajemen ISP terpadu untuk RT/RW Net dan Internet Provider Indonesia. Billing otomatis, RADIUS server multi-vendor (MikroTik, Cisco, Huawei, Juniper, VyOS, Ruijie), WhatsApp gateway, dan pembayaran online dalam satu platform.",
     "telephone": "+6285121398354",
-    "email": "support@dradius.online",
+    "email": "support@dradius.net",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "ID",
@@ -168,7 +168,7 @@ if ( is_page('tentang-kami') ) {
       ]
     },
     "sameAs": [
-      "https://app.dradius.online"
+      "https://app.dradius.net"
     ]
   }
   </script>
@@ -243,8 +243,8 @@ if ( is_page('tentang-kami') ) {
 
       <!-- Desktop CTA -->
       <div class="nav-cta">
-        <a href="https://app.dradius.online/login" class="btn btn-ghost">Masuk</a>
-        <a href="https://app.dradius.online/register" class="btn btn-primary nav-cta-main">
+        <a href="https://app.dradius.net/login" class="btn btn-ghost">Masuk</a>
+        <a href="https://app.dradius.net/register" class="btn btn-primary nav-cta-main">
           Daftar Gratis
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg>
         </a>
@@ -305,7 +305,7 @@ if ( is_page('tentang-kami') ) {
     </a>
   </div>
   <div class="mobile-nav-footer">
-    <a href="https://app.dradius.online/login" class="btn btn-outline">Masuk</a>
-    <a href="https://app.dradius.online/register" class="btn btn-primary">Daftar Gratis →</a>
+    <a href="https://app.dradius.net/login" class="btn btn-outline">Masuk</a>
+    <a href="https://app.dradius.net/register" class="btn btn-primary">Daftar Gratis →</a>
   </div>
 </nav>

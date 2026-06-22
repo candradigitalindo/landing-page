@@ -91,7 +91,7 @@
       <h2 class="page-cta__title">Siap Bergabung Bersama Kami?</h2>
       <p class="page-cta__desc">Mulai gratis hari ini dan rasakan kemudahan mengelola ISP Anda.</p>
       <div class="btn-group">
-        <a href="https://app.dradius.online/register" class="btn btn-primary btn-lg">Daftar Gratis</a>
+        <a href="https://app.dradius.net/register" class="btn btn-primary btn-lg">Daftar Gratis</a>
         <a href="<?php echo esc_url(home_url('/kontak/')); ?>" class="btn btn-outline btn-lg">Hubungi Kami</a>
       </div>
     </section>

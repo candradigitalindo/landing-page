@@ -280,7 +280,7 @@ function renderPlanCard(plan, idx) {
       <div class="plan-features">${featureRows}</div>
       <div class="plan-spacer"></div>
       <div class="plan-btn">
-        <a href="https://app.dradius.online/register" class="btn ${btnClass}">${btnText} ${arrowIcon}</a>
+        <a href="https://app.dradius.net/register" class="btn ${btnClass}">${btnText} ${arrowIcon}</a>
       </div>
     </div>`;
 }

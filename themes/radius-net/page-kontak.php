@@ -41,8 +41,8 @@
         </div>
         <h3 class="card-title">Email Support</h3>
         <p class="card-desc--mb">Kirim pertanyaan detail lewat email. Kami balas dalam 1x24 jam.</p>
-        <a href="mailto:support@dradius.online" class="btn btn-outline btn-xs">
-          support@dradius.online
+        <a href="mailto:support@dradius.net" class="btn btn-outline btn-xs">
+          support@dradius.net
         </a>
       </div>
 
@@ -53,7 +53,7 @@
         </div>
         <h3 class="card-title">Tiket Support</h3>
         <p class="card-desc--mb">Buka tiket dari dalam dasbor untuk masalah teknis atau billing.</p>
-        <a href="https://app.dradius.online/login" class="btn btn-outline btn-xs">
+        <a href="https://app.dradius.net/login" class="btn btn-outline btn-xs">
           Buka Dasbor
         </a>
       </div>
@@ -87,7 +87,7 @@
           <p>Platform Manajemen ISP Modern</p>
           <p>Indonesia</p>
           <p>
-            <a href="mailto:support@dradius.online">support@dradius.online</a>
+            <a href="mailto:support@dradius.net">support@dradius.net</a>
           </p>
         </div>
       </div>
